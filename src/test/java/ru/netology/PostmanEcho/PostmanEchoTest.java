@@ -12,15 +12,14 @@ public class PostmanEchoTest {
     void ShouldReturn() {
         given()
                 .baseUri("https://postman-echo.com")
-                .contentType("text/plain; charset=UTF-8")
+                //.contentType("text/plain; charset=UTF-8")
                 .body("some data")
                 .when()
                 .post("/post")
                 .then()
                 .statusCode(200)
                 .contentType(ContentType.JSON)
-                .body("test", equalTo("some data"));
-
+                .body("data", equalTo("some data"));
     }
 
 }
